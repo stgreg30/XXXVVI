@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loom-agent"
+version = "0.1.0"
+description = "Offline-first AI coding agent for low-bandwidth environments"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "tomli>=2.0; python_version < '3.11'",
+    "tomli-w>=1.0",
+    "lancedb>=0.12.0",
+    "tree-sitter>=0.22.0",
+    "tree-sitter-languages>=1.10.2",
+    "gitpython>=3.1",
+    "pydantic>=2.0",
+    "tqdm>=4.66",
+    "requests>=2.31",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+llama = ["llama-cpp-python>=0.2.90"]
+embeddings = ["sentence-transformers>=3.0.0"]
+full = ["loom-agent[llama,embeddings]"]
+
+[project.scripts]
+loom = "loom.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]

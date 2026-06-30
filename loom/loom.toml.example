@@ -1,0 +1,11 @@
+[models]
+default = "models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf"
+embedding = "sentence-transformers/all-MiniLM-L6-v2"
+
+[agent]
+max_retries = 2
+context_chunks = 5
+chunk_size_lines = 40
+
+[repo]
+ignore_patterns = [".git", "__pycache__", "node_modules", "*.pyc", "venv"]

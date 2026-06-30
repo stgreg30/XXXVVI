@@ -1,0 +1,8 @@
+unzip loom-final-production.zip
+cd loom-final
+mv * .. # or rename folder to 'loom'
+git init
+git add .
+git commit -m "feat: Loom v1 – offline-first AI coding agent"
+git remote add origin https://github.com/mynameisAshmi/loom.git
+git push -u origin main

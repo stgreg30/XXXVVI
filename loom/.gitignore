@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.loom/
+models/
+*.gguf
+*.db
+dist/
+build/
+*.egg-info/
+venv/
